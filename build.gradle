@@ -31,10 +31,6 @@ compileAspect {
     additionalAjcArgs = ['sourceRoots': 'src/main/aspect']
 }
 
-repositories {
-    mavenCentral()
-}
-
 jar {
     baseName = 'GASPECTJ'
     version =  '1.0'
