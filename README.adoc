@@ -70,7 +70,7 @@ To generate Eclipse metadata (.classpath and .project files), do the following:
 
 Once complete, it is ready to be imported into Eclipse IDE
 
-### Using IntelliJ
+#### Using IntelliJ
 
 To generate IDEA metadata (.iml and .ipr files), do the following action:
 
