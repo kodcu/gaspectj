@@ -1,0 +1,45 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://maven.eveoh.nl/content/repositories/releases"
+        }
+    }
+
+    dependencies {
+        classpath "nl.eveoh:gradle-aspectj:1.5"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+project.ext {
+    aspectjVersion = '1.8.4'
+}
+
+apply plugin: 'aspectj'
+apply plugin: 'eclipse' // command 'gradle eclipse' to generate .classpath/.project files
+apply plugin: 'idea' // command 'gradle idea' to generate .ipr/.iml files
+apply plugin: 'application'
+
+mainClassName = 'com.kodcu.app.main.Startup'
+
+compileAspect {
+    // we need to specify an additional source path in which our aspectj files included,
+    // to do so, sourceRoots being part of AjcTask (iajc) options is used to mention the directory
+    additionalAjcArgs = ['sourceRoots': 'src/main/aspect']
+}
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    baseName = 'GASPECTJ'
+    version =  '1.0'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}

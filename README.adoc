@@ -1,0 +1,78 @@
+## Using Gradle with AspectJ 8: GASPECTJ
+
+The running project, a part of https://github.com/kodcu/aspectj-ebook[the AspectJ E-Book], shows the basic integration between Gradle 2.1 and AspectJ 1.8.4.
+
+**Technologies:**
+
+1.	Java 8
+2.	AspectJ 8
+	
+### What's included:
+
+	src
+	\---main
+	   +---aspect
+	   |   \---com
+	   |       \---kodcu
+	   |           \---app
+	   |               \---aspects
+	   |                       DataAspect.aj
+	   |                       SoftenedHandlerAspect.aj
+	   |                       SystemStructure.aj
+	   |                       TraceAspect.aj
+	   |                       ValidationAspect.aj
+	   |
+	   +---java
+	      \---com
+	          \---kodcu
+	              \---app
+	                  +---data
+	                  |       Brand.java
+	                  |       Data.java
+	                  |
+	                  +---devices
+	                  |       Device.java
+	                  |       Mobile.java
+	                  |       NoteBook.java
+	                  |       Tablet.java
+	                  |
+	                  +---imp
+	                  |       Printable.java
+	                  |
+	                  +---main
+	                  |       Startup.java
+	                  |
+	                  \---phones
+	                          Phone.java
+	                          SmartPhone.java
+
+### How to run
+
+This aspectj project has been built in the light of the related gradle plugin: https://github.com/eveoh/gradle-aspectj
+
+Note that when doing 'gradlew -v', the Java path must refer to Java 8.
+
+To check out the project and build from source, do the following:
+
+	git clone git://github.com/kodcu/gaspectj.git
+	cd gaspectj
+	./gradlew build (--debug : to see comprehensive details) 
+
+and then run the following command:
+	
+	./gradlew run
+
+#### Using Eclipse
+
+To generate Eclipse metadata (.classpath and .project files), do the following:
+
+	./gradlew eclipse
+
+Once complete, it is ready to be imported into Eclipse IDE
+
+### Using IntelliJ
+
+To generate IDEA metadata (.iml and .ipr files), do the following action:
+
+	./gradlew idea
+
